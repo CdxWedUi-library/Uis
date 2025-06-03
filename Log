@@ -1234,7 +1234,7 @@ function Env:Window(meta)
 				Title_1.Position = UDim2.new(0.611293197, 0,0.408333331, 0)
 				Title_1.Size = UDim2.new(0.704753578, 0,0.150000006, 20)
 				Title_1.Font = Enum.Font.GothamBold
-				Title_1.Text = "Discord"
+				Title_1.Text = "Telegram"
 				Title_1.TextColor3 = Color3.fromRGB(255,255,255)
 				Title_1.TextSize = 16
 				Title_1.TextXAlignment = Enum.TextXAlignment.Left
@@ -1250,7 +1250,7 @@ function Env:Window(meta)
 				ImageLabel_1.BorderSizePixel = 0
 				ImageLabel_1.Position = UDim2.new(0.5, 0,0.5, 0)
 				ImageLabel_1.Size = UDim2.new(1, 50,1, 0)
-				ImageLabel_1.Image = "rbxassetid://72380279434385"
+				ImageLabel_1.Image = "rbxassetid://111687920393293"
 				ImageLabel_1.ImageTransparency = 0.8999999761581421
 				ImageLabel_1.ScaleType = Enum.ScaleType.Crop
 
