@@ -623,4 +623,639 @@ function Env:Window(meta)
 		Left_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
 		Left_1.BackgroundTransparency = 1
 		Left_1.BorderColor3 = Color3.fromRGB(0,0,0)
-		Left_
+		Left_1.BorderSizePixel = 0
+		Left_1.Size = UDim2.new(0, 275,1, 0)
+		Left_1.ClipsDescendants = true
+		Left_1.AutomaticCanvasSize = Enum.AutomaticSize.None
+		Left_1.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
+		Left_1.CanvasPosition = Vector2.new(0, 0)
+		Left_1.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
+		Left_1.HorizontalScrollBarInset = Enum.ScrollBarInset.None
+		Left_1.MidImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+		Left_1.ScrollBarImageColor3 = Color3.fromRGB(0,0,0)
+		Left_1.ScrollBarImageTransparency = 1
+		Left_1.ScrollBarThickness = 0
+		Left_1.ScrollingDirection = Enum.ScrollingDirection.XY
+		Left_1.TopImage = "rbxasset://textures/ui/Scroll/scroll-top.png"
+		Left_1.VerticalScrollBarInset = Enum.ScrollBarInset.None
+		Left_1.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Right
+
+		UIListLayout_3.Parent = Left_1
+		UIListLayout_3.Padding = UDim.new(0,7)
+		UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+
+		local Right_1 = Instance.new("ScrollingFrame")
+		local UIListLayout_6 = Instance.new("UIListLayout")
+
+		Right_1.Name = "Right"
+		Right_1.Parent = Pages_1
+		Right_1.Active = true
+		Right_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+		Right_1.BackgroundTransparency = 1
+		Right_1.BorderColor3 = Color3.fromRGB(0,0,0)
+		Right_1.BorderSizePixel = 0
+		Right_1.Size = UDim2.new(0, 275,1, 0)
+		Right_1.ClipsDescendants = true
+		Right_1.AutomaticCanvasSize = Enum.AutomaticSize.None
+		Right_1.BottomImage = "rbxasset://textures/ui/Scroll/scroll-bottom.png"
+		Right_1.CanvasPosition = Vector2.new(0, 0)
+		Right_1.ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
+		Right_1.HorizontalScrollBarInset = Enum.ScrollBarInset.None
+		Right_1.MidImage = "rbxasset://textures/ui/Scroll/scroll-middle.png"
+		Right_1.ScrollBarImageColor3 = Color3.fromRGB(0,0,0)
+		Right_1.ScrollBarImageTransparency = 1
+		Right_1.ScrollBarThickness = 0
+		Right_1.ScrollingDirection = Enum.ScrollingDirection.XY
+		Right_1.TopImage = "rbxasset://textures/ui/Scroll/scroll-top.png"
+		Right_1.VerticalScrollBarInset = Enum.ScrollBarInset.None
+		Right_1.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Right
+
+		UIListLayout_6.Parent = Right_1
+		UIListLayout_6.Padding = UDim.new(0,7)
+		UIListLayout_6.SortOrder = Enum.SortOrder.LayoutOrder
+
+		UIListLayout_3:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+			Left_1.CanvasSize = UDim2.new(0, 0, 0, UIListLayout_3.AbsoluteContentSize.Y + 20)
+		end)
+
+		UIListLayout_6:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+			Right_1.CanvasSize = UDim2.new(0, 0, 0, UIListLayout_6.AbsoluteContentSize.Y + 20)
+		end)
+
+		ClickTab.MouseButton1Click:Connect(function()
+			Header_1.Position = UDim2.new(0, -30,0, 0)
+			tw({
+				v = Header_1,
+				t = 0.3,
+				s = "Back",
+				d = "Out",
+				g = {Position = UDim2.new(0, 0,0, 0)}
+			}):Play()
+			tw({
+				v = Title_1,
+				t = 0.5,
+				s = "Back",
+				d = "Out",
+				g = {TextTransparency = 1}
+			}):Play()
+			tw({
+				v = Desc_1,
+				t = 0.5,
+				s = "Back",
+				d = "Out",
+				g = {TextTransparency = 1}
+			}):Play()
+			tw({
+				v = Line_1,
+				t = 0.5,
+				s = "Back",
+				d = "Out",
+				g = {BackgroundTransparency = 1}
+			}):Play()
+			Desc_1.Text = Desc
+			Title_1.Text = Title
+			delay(0.2, function()
+				tw({
+					v = Title_1,
+					t = 0.5,
+					s = "Back",
+					d = "Out",
+					g = {TextTransparency = 0}
+				}):Play()
+				tw({
+					v = Desc_1,
+					t = 0.5,
+					s = "Back",
+					d = "Out",
+					g = {TextTransparency = 0.5}
+				}):Play()
+				tw({
+					v = Line_1,
+					t = 0.5,
+					s = "Back",
+					d = "Out",
+					g = {BackgroundTransparency = 0}
+				}):Play()
+			end)
+			Return.Visible = true
+			UIStroke_1z.Enabled = true
+			Return.Position = UDim2.new(0.9, 0,0.049, 0)
+			tw({
+				v = Return,
+				t = 0.3,
+				s = "Back",
+				d = "Out",
+				g = {Position = UDim2.new(0.77, 0,0.049, 0)}
+			}):Play()
+			tw({
+				v = Return,
+				t = 0.3,
+				s = "Back",
+				d = "Out",
+				g = {BackgroundTransparency = 0}
+			}):Play()
+			tw({
+				v = UIStroke_1z,
+				t = 0.3,
+				s = "Back",
+				d = "Out",
+				g = {Transparency = 0}
+			}):Play()
+			tw({
+				v = ImageLabel_1z,
+				t = 0.3,
+				s = "Back",
+				d = "Out",
+				g = {ImageTransparency = 0.84}
+			}):Play()
+			tw({
+				v = TextLabel_1z,
+				t = 0.3,
+				s = "Back",
+				d = "Out",
+				g = {TextTransparency = 0}
+			}):Play()
+
+			tw({
+				v = Tab_1,
+				t = 0.3,
+				s = "Bounce",
+				d = "Out",
+				g = {Size = UDim2.new(1, 0,0, 0)}
+			}):Play()
+			Tab_1.Visible = false
+			Pages_1.Size = UDim2.new(0.965, 0,0, 0)
+			tw({
+				v = Pages_1,
+				t = 0.25,
+				s = "Back",
+				d = "Out",
+				g = {Size = UDim2.new(0.965, 0,0.767, 0)}
+			}):Play()
+			Pages_1.Visible = true
+		end)
+
+		local function GetSide(side)
+			if not side then
+				return Left_1
+			end
+			local sideLower = string.lower(tostring(side))
+			if sideLower == "r" or sideLower == "right" or side == 2 then
+				return Right_1
+			elseif sideLower == "l" or sideLower == "left" or side == 1 then
+				return Left_1
+			else
+				return Left_1
+			end
+		end
+
+		Env.Section = {}
+
+		function Env.Section:Section(meta)
+
+			local Title = meta.Title or "Section"
+			local Side = meta.Side or "l"
+
+			local Section_1 = Instance.new("Frame")
+			local UICorner_3 = Instance.new("UICorner")
+			local UIListLayout_4 = Instance.new("UIListLayout")
+			local Title_2 = Instance.new("TextLabel")
+			local UIPadding_2 = Instance.new("UIPadding")
+			local Line_2 = Instance.new("Frame")
+			local UIGradient_2 = Instance.new("UIGradient")
+
+			Section_1.Name = "Section"
+			Section_1.Parent = GetSide(Side)
+			Section_1.BackgroundColor3 = Color3.fromRGB(0,0,0)
+			Section_1.BackgroundTransparency = 0.6
+			Section_1.BorderColor3 = Color3.fromRGB(20, 20, 20)
+			Section_1.BorderSizePixel = 0
+			Section_1.Size = UDim2.new(1, 0,0, 100)
+
+			UICorner_3.Parent = Section_1
+			UICorner_3.CornerRadius = UDim.new(0,5)
+
+			UIListLayout_4.Parent = Section_1
+			UIListLayout_4.Padding = UDim.new(0,5)
+			UIListLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+			UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+
+			Title_2.Name = "Title"
+			Title_2.Parent = Section_1
+			Title_2.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			Title_2.BackgroundTransparency = 1
+			Title_2.BorderColor3 = Color3.fromRGB(0,0,0)
+			Title_2.BorderSizePixel = 0
+			Title_2.LayoutOrder = -3
+			Title_2.Size = UDim2.new(0.899999976, 0,0, 20)
+			Title_2.Font = Enum.Font.GothamBold
+			Title_2.Text = Title
+			Title_2.TextColor3 = Color3.fromRGB(255,255,255)
+			Title_2.TextSize = 15
+
+			UIPadding_2.Parent = Section_1
+			UIPadding_2.PaddingTop = UDim.new(0,7)
+
+			Line_2.Name = "Line"
+			Line_2.Parent = Section_1
+			Line_2.BackgroundColor3 = Color3.fromRGB(255,255,255)
+			Line_2.BorderColor3 = Color3.fromRGB(0,0,0)
+			Line_2.BorderSizePixel = 0
+			Line_2.BackgroundTransparency = 0.25
+			Line_2.LayoutOrder = -2
+			Line_2.Position = UDim2.new(-0.209090903, 0,0.215053767, 0)
+			Line_2.Size = UDim2.new(1, 0,0, 1)
+
+			UIGradient_2.Parent = Line_2
+			UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 127)), ColorSequenceKeypoint.new(0.482699, Color3.fromRGB(0, 170, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(85, 85, 255))}
+
+			UIListLayout_4:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+				Section_1.Size = UDim2.new(1, 0, 0, UIListLayout_4.AbsoluteContentSize.Y + 15)
+			end)
+
+			Env._Class = {}
+
+			function Env._Class:Button(meta)
+
+				local Title = meta.Title
+				local Desc = meta.Desc or nil
+				local Color = meta.Color or nil
+				local Callback = meta.Callback
+				local Icon = meta.Icon or nil
+
+				if not Icon and not Desc and not Color then
+					local Button = Instance.new("Frame")
+					local UIGradient_1 = Instance.new("UIGradient")
+					local Title_1 = Instance.new("TextLabel")
+					local UICorner_1 = Instance.new("UICorner")
+					local ImageLabel_1 = Instance.new("ImageLabel")
+					local Clickbutton = click(Button)
+
+					Button.Name = "Button"
+					Button.Parent = Section_1
+					Button.AnchorPoint = Vector2.new(0.5, 0.5)
+					Button.BackgroundColor3 = Color3.fromRGB(255,255,255)
+					Button.BorderColor3 = Color3.fromRGB(0,0,0)
+					Button.BorderSizePixel = 0
+					Button.Size = UDim2.new(0.97, 0,0, 30)
+					Button.ClipsDescendants = true
+
+					UIGradient_1.Parent = Button
+					UIGradient_1.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 127)), ColorSequenceKeypoint.new(0.482699, Color3.fromRGB(0, 170, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(85, 85, 255))}
+
+					Title_1.Name = "Title"
+					Title_1.Parent = Button
+					Title_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					Title_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+					Title_1.BackgroundTransparency = 1
+					Title_1.BorderColor3 = Color3.fromRGB(0,0,0)
+					Title_1.BorderSizePixel = 0
+					Title_1.Position = UDim2.new(0.5, 0,0.5, 0)
+					Title_1.Size = UDim2.new(1, 0,1, 0)
+					Title_1.Font = Enum.Font.GothamBold
+					Title_1.Text = Title
+					Title_1.TextColor3 = Color3.fromRGB(255,255,255)
+					Title_1.TextSize = 14
+
+					UICorner_1.Parent = Button
+					UICorner_1.CornerRadius = UDim.new(0,5)
+
+					ImageLabel_1.Parent = Button
+					ImageLabel_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					ImageLabel_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+					ImageLabel_1.BackgroundTransparency = 1
+					ImageLabel_1.BorderColor3 = Color3.fromRGB(0,0,0)
+					ImageLabel_1.BorderSizePixel = 0
+					ImageLabel_1.Position = UDim2.new(0.5, 0,0.5, 0)
+					ImageLabel_1.Size = UDim2.new(1, 50,1, 0)
+					ImageLabel_1.Image = "rbxassetid://72380279434385"
+					ImageLabel_1.ImageTransparency = 0.800000011920929
+					ImageLabel_1.ScaleType = Enum.ScaleType.Crop
+
+					Clickbutton.MouseButton1Click:Connect(function()
+						Callback()
+						tw({
+							v = Button,
+							t = 0.15,
+							s = "Bounce",
+							d = "Out",
+							g = {Size = UDim2.new(0.85, 0,0, 30)}
+						}):Play()
+						delay(0.06, function()
+							tw({
+								v = Button,
+								t = 0.15,
+								s = "Bounce",
+								d = "Out",
+								g = {Size = UDim2.new(0.97, 0,0, 30)}
+							}):Play()
+						end)
+						EffectClick(Clickbutton, Button)
+					end)
+
+					local Index = {}
+
+					function Index:Fire()
+						Callback()
+					end
+
+					function Index:UpdateTitle(v)
+						Title_1.Text = v
+					end
+
+					function Index:Visible(v)
+						Button.Visible = v
+					end
+
+					return Index
+				else
+					local ButtonImage = Instance.new("Frame")
+					local Title_1 = Instance.new("TextLabel")
+					local UICorner_1 = Instance.new("UICorner")
+					local ImageLabel_1 = Instance.new("ImageLabel")
+					local UIGradient_1 = Instance.new("UIGradient")
+					local icon_1 = Instance.new("ImageLabel")
+					local Desc_1 = Instance.new("TextLabel")
+					local next_1 = Instance.new("ImageLabel")
+					local ClickButton = click(ButtonImage)
+
+					ButtonImage.Name = "ButtonImage"
+					ButtonImage.Parent = Section_1
+					ButtonImage.AnchorPoint = Vector2.new(0.5, 0.5)
+					ButtonImage.BackgroundColor3 = Color3.fromRGB(0,0,0)
+					ButtonImage.BackgroundTransparency = 0.5
+					ButtonImage.BorderColor3 = Color3.fromRGB(0,0,0)
+					ButtonImage.BorderSizePixel = 0
+					ButtonImage.Size = UDim2.new(0.97, 0,0, 50)
+					ButtonImage.ClipsDescendants = true
+
+					Title_1.Name = "Title"
+					Title_1.Parent = ButtonImage
+					Title_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					Title_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+					Title_1.BackgroundTransparency = 1
+					Title_1.BorderColor3 = Color3.fromRGB(0,0,0)
+					Title_1.BorderSizePixel = 0
+					Title_1.Position = UDim2.new(0.575679302, 0,0.368333131, 0)
+					Title_1.Size = UDim2.new(0.775981307, 0,0.0700000003, 20)
+					Title_1.Font = Enum.Font.GothamBold
+					Title_1.RichText = true
+					Title_1.Text = Title
+					Title_1.TextColor3 = Color3.fromRGB(255,255,255)
+					Title_1.TextSize = 14
+					Title_1.TextXAlignment = Enum.TextXAlignment.Left
+
+					UICorner_1.Parent = ButtonImage
+					UICorner_1.CornerRadius = UDim.new(0,5)
+
+					ImageLabel_1.Parent = ButtonImage
+					ImageLabel_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					ImageLabel_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+					ImageLabel_1.BackgroundTransparency = 1
+					ImageLabel_1.BorderColor3 = Color3.fromRGB(0,0,0)
+					ImageLabel_1.BorderSizePixel = 0
+					ImageLabel_1.Position = UDim2.new(0.5, 0,0.5, 0)
+					ImageLabel_1.Size = UDim2.new(1, 50,1, 0)
+					ImageLabel_1.Image = "rbxassetid://72380279434385"
+					ImageLabel_1.ImageTransparency = 0.8999999761581421
+					ImageLabel_1.ScaleType = Enum.ScaleType.Crop
+
+					UIGradient_1.Parent = ImageLabel_1
+					UIGradient_1.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 127)), ColorSequenceKeypoint.new(0.482699, Color3.fromRGB(0, 170, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(85, 85, 255))}
+
+					icon_1.Name = "icon"
+					icon_1.Parent = ButtonImage
+					icon_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					icon_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+					icon_1.BackgroundTransparency = 1
+					icon_1.BorderColor3 = Color3.fromRGB(0,0,0)
+					icon_1.BorderSizePixel = 0
+					icon_1.Position = UDim2.new(0, 25,0.5, 0)
+					icon_1.Size = UDim2.new(0, 35,0, 35)
+					icon_1.Image = GetIcon(Icon)
+					icon_1.ScaleType = Enum.ScaleType.Crop
+
+					Desc_1.Name = "Desc"
+					Desc_1.Parent = ButtonImage
+					Desc_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					Desc_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+					Desc_1.BackgroundTransparency = 1
+					Desc_1.BorderColor3 = Color3.fromRGB(0,0,0)
+					Desc_1.BorderSizePixel = 0
+					Desc_1.Position = UDim2.new(0.575679302, 0,0.664999783, 0)
+					Desc_1.Size = UDim2.new(0.775981307, 0,-0.0366666801, 20)
+					Desc_1.Font = Enum.Font.GothamBold
+					Desc_1.RichText = true
+					Desc_1.Text = Desc
+					Desc_1.TextColor3 = Color3.fromRGB(255,255,255)
+					Desc_1.TextSize = 10
+					Desc_1.TextTransparency = 0.5
+					Desc_1.TextXAlignment = Enum.TextXAlignment.Left
+
+					next_1.Name = "next"
+					next_1.Parent = ButtonImage
+					next_1.AnchorPoint = Vector2.new(0.5, 0.5)
+					next_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+					next_1.BackgroundTransparency = 1
+					next_1.BorderColor3 = Color3.fromRGB(0,0,0)
+					next_1.BorderSizePixel = 0
+					next_1.Position = UDim2.new(0, 245,0.5, 0)
+					next_1.Size = UDim2.new(0, 20,0, 20)
+					next_1.Image = "rbxassetid://108028847031522"
+					next_1.ScaleType = Enum.ScaleType.Crop
+
+					ClickButton.MouseButton1Click:Connect(function()
+						Callback()
+						tw({
+							v = next_1,
+							t = 0.15,
+							s = "Bounce",
+							d = "Out",
+							g = {Position = UDim2.new(0, 252,0.5, 0)}
+						}):Play()
+						delay(0.06, function()
+							tw({
+								v = next_1,
+								t = 0.15,
+								s = "Bounce",
+								d = "Out",
+								g = {Position = UDim2.new(0, 245,0.5, 0)}
+							}):Play()
+						end)
+						EffectClick2(ClickButton, ButtonImage)
+					end)
+
+					local Index = {}
+
+					function Index:Fire()
+						Callback()
+					end
+
+					function Index:Title(v)
+						Title_1.Text = v
+					end
+
+					function Index:Visible(v)
+						ButtonImage.Visible = v
+					end
+
+					return Index
+				end
+			end
+
+			function Env._Class:ThumnailsImage(meta)
+				local Banner = meta.Banner
+				local Y = meta.SizeY or 150
+
+				local Image = Instance.new("ImageLabel")
+				local UICorner_1 = Instance.new("UICorner")
+
+				Image.Name = "Image"
+				Image.Parent = Section_1
+				Image.BackgroundColor3 = Color3.fromRGB(255,255,255)
+				Image.BorderColor3 = Color3.fromRGB(0,0,0)
+				Image.BackgroundTransparency = 1
+				Image.BorderSizePixel = 0
+				Image.Size = UDim2.new(0.97, 0,0, Y)
+				Image.Image = GetIcon(Banner)
+				Image.ScaleType = Enum.ScaleType.Crop
+
+				UICorner_1.Parent = Image
+				UICorner_1.CornerRadius = UDim.new(0,5)
+
+				local Index = {}
+
+				function Index:Image(v)
+					Image.Image = GetIcon(v)
+				end
+
+				function Index:Y(v)
+					Image.Size = UDim2.new(0.97, 0,0, v)
+				end
+
+				function Index:Visible(v)
+					Image.Visible = v
+				end
+
+				return Index
+			end
+
+			local function GetAlig(v)
+				if v == 'l' then
+					return Enum.TextXAlignment.Left
+				elseif v == 'r' then
+					return Enum.TextXAlignment.Right
+				else
+					return Enum.TextXAlignment.Center
+				end
+			end
+
+			function Env._Class:Label(meta)
+
+				local Title = meta.Title
+				local Side = meta.Side
+
+				local Label = Instance.new("TextLabel")
+				Label.Name = "Label"
+				Label.Parent = Section_1
+				Label.BackgroundColor3 = Color3.fromRGB(255,255,255)
+				Label.BackgroundTransparency = 1
+				Label.BorderColor3 = Color3.fromRGB(0,0,0)
+				Label.BorderSizePixel = 0
+				Label.Size = UDim2.new(0.899999976, 0,0, 20)
+				Label.Font = Enum.Font.GothamBold
+				Label.RichText = true
+				Label.Text = Title
+				Label.TextColor3 = Color3.fromRGB(255,255,255)
+				Label.TextSize = 14
+				Label.TextXAlignment = GetAlig(Side)
+
+				local Index = {}
+
+				function Index:Visible(v)
+					Label.Visible = v
+				end
+
+				return Index
+			end
+
+			function Env._Class:Line()
+				local Line_2 = Instance.new("Frame")
+				local UIGradient_2 = Instance.new("UIGradient")
+
+				Line_2.Name = "Line"
+				Line_2.Parent = Section_1
+				Line_2.BackgroundColor3 = Color3.fromRGB(255,255,255)
+				Line_2.BorderColor3 = Color3.fromRGB(0,0,0)
+				Line_2.BorderSizePixel = 0
+				Line_2.BackgroundTransparency = 0.25
+				Line_2.Position = UDim2.new(-0.209090903, 0,0.215053767, 0)
+				Line_2.Size = UDim2.new(1, 0,0, 1)
+
+				UIGradient_2.Parent = Line_2
+				UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 255, 127)), ColorSequenceKeypoint.new(0.482699, Color3.fromRGB(0, 170, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(85, 85, 255))}
+
+				local Index = {}
+
+				function Index:Visible(v)
+					Line_2.Visible = v
+				end
+
+				return Index
+			end
+
+			function Env._Class:Discord(Link)
+
+				local Discord = Instance.new("Frame")
+				local Title_1 = Instance.new("TextLabel")
+				local UICorner_1 = Instance.new("UICorner")
+				local ImageLabel_1 = Instance.new("ImageLabel")
+				local UIGradient_1 = Instance.new("UIGradient")
+				local icon_1 = Instance.new("ImageLabel")
+				local Desc_1 = Instance.new("TextLabel")
+				local ClickDiscord = click(Discord)
+
+				Discord.Name = "Discord"
+				Discord.Parent = Section_1
+				Discord.AnchorPoint = Vector2.new(0.5, 0.5)
+				Discord.BackgroundColor3 = Color3.fromRGB(255,255,255)
+				Discord.BorderColor3 = Color3.fromRGB(0,0,0)
+				Discord.BorderSizePixel = 0
+				Discord.Size = UDim2.new(0.97, 0,0, 60)
+				Discord.ClipsDescendants = true
+
+				Title_1.Name = "Title"
+				Title_1.Parent = Discord
+				Title_1.AnchorPoint = Vector2.new(0.5, 0.5)
+				Title_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+				Title_1.BackgroundTransparency = 1
+				Title_1.BorderColor3 = Color3.fromRGB(0,0,0)
+				Title_1.BorderSizePixel = 0
+				Title_1.Position = UDim2.new(0.611293197, 0,0.408333331, 0)
+				Title_1.Size = UDim2.new(0.704753578, 0,0.150000006, 20)
+				Title_1.Font = Enum.Font.GothamBold
+				Title_1.Text = "Discord"
+				Title_1.TextColor3 = Color3.fromRGB(255,255,255)
+				Title_1.TextSize = 16
+				Title_1.TextXAlignment = Enum.TextXAlignment.Left
+
+				UICorner_1.Parent = Discord
+				UICorner_1.CornerRadius = UDim.new(0,5)
+
+				ImageLabel_1.Parent = Discord
+				ImageLabel_1.AnchorPoint = Vector2.new(0.5, 0.5)
+				ImageLabel_1.BackgroundColor3 = Color3.fromRGB(255,255,255)
+				ImageLabel_1.BackgroundTransparency = 1
+				ImageLabel_1.BorderColor3 = Color3.fromRGB(0,0,0)
+				ImageLabel_1.BorderSizePixel = 0
+				ImageLabel_1.Position = UDim2.new(0.5, 0,0.5, 0)
+				ImageLabel_1.Size = UDim2.new(1, 50,1, 0)
+				ImageLabel_1.Image = "rbxassetid://72380279434385"
+				ImageLabel_1.ImageTransparency = 0.8999999761581421
+				ImageLabel_1.ScaleType = Enum.ScaleType.Crop
+
+				UIGradient_1.Parent = Discord
+				UIGradient_1.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(88, 101, 242)), ColorSequenceKeypoint.new(1, Color3.fromRGB(142, 130, 255))}
+
+				icon_1.Name = "icon"
+				
